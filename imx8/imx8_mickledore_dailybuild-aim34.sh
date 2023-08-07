@@ -326,13 +326,13 @@ function build_yocto_images()
         set_environment
 
         # Re-build U-Boot & kernel
-        echo "[ADV] build_yocto_image: build u-boot"
-        building u-boot-imx cleansstate
-        building u-boot-imx
+        #echo "[ADV] build_yocto_image: build u-boot"
+        #building u-boot-imx cleansstate
+        #building u-boot-imx
 
-        echo "[ADV] build_yocto_image: build kernel"
-        building linux-imx cleansstate
-        building linux-imx
+        #echo "[ADV] build_yocto_image: build kernel"
+        #building linux-imx cleansstate
+        #building linux-imx
 
         # Clean package to avoid build error
 	#clean_yocto_packages
