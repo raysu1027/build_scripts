@@ -10,7 +10,7 @@ $BUILD_SH imx8 imx8LBV"$VERSION_NUM" 1G
 
 #imx8_projects
 if [ $ROM2620A1 == true ]; then
-	$BUILD_SH rom2620a1-8U 2620A1"$AIM_VERSION"LIV"$VERSION_NUM" "2G 1G" ""
+	$BUILD_SH rom2620a1-8U 2620A1"$AIM_VERSION"LIV"$VERSION_NUM" "2G" ""
 	[ "$?" -ne 0 ] && exit 1
 fi
 if [ $LPDDR4EVK8U == true ]; then
