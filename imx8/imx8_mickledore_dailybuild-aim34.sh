@@ -295,6 +295,12 @@ function clean_yocto_packages()
 	echo "[ADV] build_yocto_image: clean for other packages"
 	building spirv-tools cleansstate
 	building fmt cleansstate
+
+	# test for yocto42
+	building jailhouse cleansstate
+ 	building packagegroup-fsl-tools-testapps cleansstate
+  	building cryptodev-module cleansstate
+ 
 	if [ "$PRODUCT" == "rom7720a1" ] || [ "$PRODUCT" == "rom5620a1" ] || [ "$PRODUCT" == "rom3620a1" ] || [ "$PRODUCT" == "rom5722a1" ] || [ "$PRODUCT" == "rsb3720a1" ]; then
                 building nn-imx cleansstate
         fi
@@ -330,16 +336,16 @@ function build_yocto_images()
         set_environment
 
         # Re-build U-Boot & kernel
-        #echo "[ADV] build_yocto_image: build u-boot"
-        #building u-boot-imx cleansstate
-        #building u-boot-imx
+        echo "[ADV] build_yocto_image: build u-boot"
+        building u-boot-imx cleansstate
+        building u-boot-imx
 
-        #echo "[ADV] build_yocto_image: build kernel"
-        #building linux-imx cleansstate
-        #building linux-imx
+        echo "[ADV] build_yocto_image: build kernel"
+        building linux-imx cleansstate
+        building linux-imx
 
         # Clean package to avoid build error
-	#clean_yocto_packages
+	clean_yocto_packages
 
 	# Build full image
         building $DEPLOY_IMAGE_NAME
